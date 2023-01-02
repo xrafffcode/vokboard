@@ -1,0 +1,81 @@
+<section class="product" style="background-color: #F9F4F0;">
+    <div class="Container__">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{ section.settings.image | img_url: '1000x' }}" alt="" width="600" class="img-fluid ">
+            </div>
+            <div class="col-md-6 mt-4 col-product">
+                <h2 class="fw-bold headline-shop">
+                    {{ section.settings.headline-1 }}
+                </h2>
+                <hr>
+                <p class="caption-shop mt-3">
+                    {{ section.settings.caption-1 }}
+                </p>
+                {% if section.settings.btn == true %}
+                <a href="{{ section.settings.btn }}" class="btn btn-shop mt-4">
+                    {{ section.settings.btn-text }}
+                </a>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+"name": "Image Left Text Right",
+"settings": [
+{
+"type": "image_picker",
+"id": "image",
+"label": "Image",
+"info": "340 x 80px .jpg recommended"
+},
+{
+"type": "html",
+"id": "headline-1",
+"label": "Headline 1",
+"default": "SUPER <span class=\"text-color-theme\">LONG RANGE</span>"
+},
+{
+"type": "text",
+"id": "caption-1",
+"label": "Text",
+"default": "When you are on the good road condition, you will try to ride it with higher speed. The top speed of
+46km/h(69kg, mode 3, flat road) is great for you to really enjoy riding with the wind"
+},
+{
+"type": "checkbox",
+"id": "btn",
+"label": "Use Button?",
+"default": true
+}
+{
+"type": "text",
+"id": "text-btn",
+"label": "Text Button",
+"default": "Checkout the ER Version"
+},
+{
+"type": "url",
+"id": "button_link",
+"label": "Button link"
+}
+],
+"presets": [
+{
+"category": "Advanced",
+"name": "Image Left Text Right",
+"settings": {}
+}
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
